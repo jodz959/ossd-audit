@@ -1,7 +1,14 @@
-<nav>
-   {% for item in site.data.navigation %}
-	<a href="{{ item.link }}" {% if page.url == item.link %}class="current" {% endif %}>
-		{{ item.name }}
-	</a>
-	{% endfor  %}
+<nav class="navbar fixed-top navbar-dark bg-dark">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<div class="navbar-nav">
+			  {% for item in site.data.navigation %}
+			  <a href="{{ item.link }}" {% if page.url == item.link %}class="current" {% endif %}>
+				  {{ item.name }}
+			  </a>
+			  {% endfor  %}
+		</div>
+	</div>
 </nav>
